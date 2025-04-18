@@ -35,7 +35,7 @@ public class AuthenticationService {
     private final EmailService emailService;
     private final TokenRepository tokenRepository;
 
-    @Value("${mailing.frontend.activation-url}")
+    @Value("${application.mailing.frontend.activation-url}")
     private String activationUrl;
     private static final String USER_ROLE_NAME = "USER";
 

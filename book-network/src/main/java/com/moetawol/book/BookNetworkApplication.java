@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@EnableJpaAuditing(auditorAwareRef = "auditAware")
+@EnableJpaAuditing(auditorAwareRef = "auditorAware")
 public class BookNetworkApplication {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-﻿package com.moetawol.book;
+package com.moetawol.book;
 
 import com.moetawol.book.role.Role;
 import com.moetawol.book.role.RoleRepository;
@@ -6,9 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-//@EnabledJpaAuditing
+@EnableJpaAuditing(auditorAwareRef = "auditAware")
 public class BookNetworkApplication {
 
 	public static void main(String[] args) {

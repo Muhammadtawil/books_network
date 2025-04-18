@@ -23,7 +23,6 @@ import java.util.UUID;
 @AllArgsConstructor
  @Entity
  @Table(name = "role")
-// @EntityListeners(AuditingEntityListener.class)
 public class Role {
 
     @Id

@@ -6,7 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
-public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecificationExecutor<Book> {
+import java.util.UUID;
+
+public interface BookRepository extends JpaRepository<Book, UUID>, JpaSpecificationExecutor<Book> {
     @Query("""
             SELECT book
             FROM Book book
@@ -14,5 +16,5 @@ public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecifi
             AND book.shareable = true
             AND book.createdBy != :userId
             """)
-    Page<Book> findAllDisplayableBooks(Pageable pageable, String userId);
+    Page<Book> findAllDisplayableBooks(Pageable pageable, UUID userId);
 }

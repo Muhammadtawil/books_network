@@ -1,8 +1,8 @@
 package com.moetawol.book.user;
 
-//import com.moetawol.book.book.Book;
-//import com.moetawol.book.history.BookTransactionHistory;
-//import com.moetawol.book.role.Role;
+
+import com.moetawol.book.book.Book;
+import com.moetawol.book.history.BookTransactionHistory;
 import com.moetawol.book.role.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,8 +18,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
@@ -62,10 +60,10 @@ public class User implements UserDetails, Principal {
     private boolean enabled;
     @ManyToMany(fetch = EAGER)
     private List<Role> roles;
-//    @OneToMany(mappedBy = "owner")
-//    private List<Book> books;
-//    @OneToMany(mappedBy = "user")
-//    private List<BookTransactionHistory> histories;
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+    @OneToMany(mappedBy = "user")
+    private List<BookTransactionHistory> histories;
 
 
     @CreationTimestamp
